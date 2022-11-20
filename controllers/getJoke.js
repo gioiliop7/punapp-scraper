@@ -5,7 +5,7 @@ module.exports = function () {
 
   const getJokes = async function () {
     let lastPage = false;
-    let page = 1;
+    let page = 0;
     try {
       const jokesArray = [];
       while (lastPage == false) {
@@ -30,6 +30,7 @@ module.exports = function () {
 
   async function selectRandomJoke() {
     const jokes = await getJokes();
+    console.log(jokes.length)
     return jokes[Math.floor(Math.random() * jokes.length)];
   }
 
